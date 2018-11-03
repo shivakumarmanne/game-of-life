@@ -5,7 +5,7 @@ stage('SCM')
 git 'https://github.com/shivakumarmanne/game-of-life.git'
  }
  
-Stage('SonarQube Scanner')
+stage('SonarQube Scanner')
 {
 withSonarQubeEnv('Sonar') {
 def mvnHome = tool name: 'Maven', type: 'maven'
