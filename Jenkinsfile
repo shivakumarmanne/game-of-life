@@ -1,18 +1,15 @@
-
 node('sonar_slave') {
    
-stage('SCM') {
-
+stage('SCM') 
+{
 git 'https://github.com/shivakumarmanne/game-of-life.git'
-
-   }
+ }
  
 Stage('SonarQube Scanner')
 {
 withSonarQubeEnv('Sonar') {
-Sh 'mvn install sonar:sonar   
+def mvnHome = tool name: 'Maven', type: 'maven'
+sh "${mvnHome}/bin/mvn install sonar:sonar"
 }
-
 }
-
 }
