@@ -5,7 +5,7 @@ pipeline{
         maven "maven"
     }
     stages{
-        stage ("Updated Stage Maven"){
+        stage ("Maven-with different version"){
             steps{
                 git url: 'https://github.com/shivakumarmanne/game-of-life.git'
                 sh '''
