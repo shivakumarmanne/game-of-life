@@ -9,7 +9,7 @@ pipeline{
             steps{
                 git url: 'https://github.com/shivakumarmanne/game-of-life.git'
                 sh '''
-                mvn clean install
+                mvn clean install -Dv=${BUILD_NUMBER}
                 '''
             }
         }
