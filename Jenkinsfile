@@ -5,10 +5,10 @@ pipeline{
         maven "maven"
     }
     stages{
-        stage ("Maven-with different version"){
+        stage ("Maven Build"){
             steps{
                 git url: 'https://github.com/shivakumarmanne/game-of-life.git'
-                sh '''
+                bat '''
                 mvn clean install -Dv=${BUILD_NUMBER}
                 '''
             }
