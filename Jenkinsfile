@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent { node { label 'Self' } }
     tools{
         jdk "JDK"
         maven "maven"
