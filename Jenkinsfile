@@ -1,9 +1,5 @@
 pipeline{
-    agent { node { label 'Self' } }
-    tools{
-        jdk "JDK"
-        maven "maven"
-    }
+    agent any
     stages{
         stage ("Maven Build"){
             steps{
@@ -12,11 +8,6 @@ pipeline{
                 mvn clean install
                 '''
             }
-        }
-    }
-    post{
-        success{
-            archiveArtifacts 'gameoflife-web/target/*.war'
         }
     }
 }
