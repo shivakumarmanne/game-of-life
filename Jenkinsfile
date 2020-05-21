@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent { node { label 'Self' } }
     stages{
         stage ("Maven Build"){
             steps{
