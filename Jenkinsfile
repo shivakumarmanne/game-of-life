@@ -1,5 +1,6 @@
 pipeline{
     agent { node { label 'Self' } }
+    options { timestamps() }
     tools{
         jdk "JDK"
         maven "maven"
