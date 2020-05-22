@@ -1,10 +1,6 @@
 pipeline{
-    agent { node { label 'Self' } }
+    agent any
     options { timestamps() }
-    tools{
-        jdk "JDK"
-        maven "maven"
-    }
     stages{
         stage ("Maven Build"){
             steps{
